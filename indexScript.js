@@ -31,6 +31,26 @@ function collisionDetection(){
 }
 
 function ballMovement(){
+    //Rebote cuando llegue a los limites laterales
+    if(x + dx > canvas.width - ballRadius || x + dx < ballRadius) 
+    {
+        dx = -dx;
+    }
+
+    //Rebotar parte de arriba
+    if (y + dy < ballRadius){
+        dy = -dy;
+    }
+
+    //Game Over - auxiliar
+    if(y + dy > canvas.height - ballRadius){
+        console.log("Game Over");
+        document.location.reload()
+
+    }
+
+    x += dx;
+    y += dy;
 
 }
 
@@ -38,10 +58,15 @@ function paddleMovement(){
 
 }
 
+function cleanCanvas(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
 canvas.width = 448;
 canvas.height = 512;
 
 function draw (){
+    cleanCanvas();
     //Dibujar elementos
     drawBall();
     drawPaddle();
