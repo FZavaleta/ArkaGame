@@ -1,10 +1,14 @@
-body{
-    background-color: #111 ;
-}
-canvas{
-    border: 4px solid #fff;
+body {
+    background-color: #0e0707;
+    display: grid;
+    place-content: center;
+  }
+
+  canvas {
+    border: 4px solid #000;
     border-bottom: transparent;
-    background: #000;
+    background: url('./resources/bkg.png') repeat;
     margin: 0 auto;
     display: block;
-}
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+  }
